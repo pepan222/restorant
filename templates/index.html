@@ -1,0 +1,113 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ресторан</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="header">
+       
+        <nav class="nav">
+            
+            
+            <div class="logo">
+                <img src="logo.png" alt="Логотип" class="logo__img">
+            </div>
+            <ul class="nav__list">
+                <li class="nav__item"><a href="index.html" class="nav__link">Главная</a></li>
+                <li class="nav__item"><a href="menu.html" class="nav__link">Меню</a></li>
+                <li class="nav__item"><a href="register.html" class="nav__link">Регистрация</a></li>
+                <li class="nav__item"><a href="cart.html" class="nav__link">Корзина</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <script src="../js/main.js"></script>
+    
+                <div class="slider">
+
+                    <div class="div11"></div>
+                    <div class="div12"></div>
+                    <div class="img-overlay">
+                        <div class="slider">
+                            <div class="item" style="background:   url(merk.jpg); background-repeat: no-repeat;  background-size: cover;">
+                                <section class="main">
+                                    <div class="hero">
+                                        <h1 class="hero__title" style="color: white;">Добро пожаловать в наш ресторан!</h1>
+                                        <p class="hero__description" style="color: white;">Наши блюда подарят вам незабываемый вкус и удовольствие.</p>
+                                        <a href="menu.html" class="button">Посмотреть меню</a>
+                                    </div>
+                                </section>
+                            </div>
+            
+                            <div class="item" style="background:   url(orig.jpg); background-repeat: no-repeat;  background-size: cover;">
+                                <section class="main">
+                                    <div class="hero">
+                                        <h1 class="hero__title">Добро пожаловать в наш ресторан!</h1>
+                                        <p class="hero__description">Наши блюда подарят вам незабываемый вкус и удовольствие.</p>
+                                        <a href="menu.html" class="button">Посмотреть меню</a>
+                                    </div>
+                                </section>
+                            </div>
+            
+                            <div class="item" style="background:   url(zal.jpg); background-repeat: no-repeat;  background-size: cover;">
+                                <section class="main">
+                                    <div class="hero">
+                                        <h1 class="hero__title">Добро пожаловать в наш ресторан!</h1>
+                                        <p class="hero__description">Наши блюда подарят вам незабываемый вкус и удовольствие.</p>
+                                        <a href="menu.html" class="button">Посмотреть меню</a>
+                                    </div>
+                                </section>
+                            </div>
+            
+                            <a class="prev" onclick="minusSlide()">&#10094;</a>
+                            <a class="next" onclick="plusSlide()">&#10095;</a>
+                        </div>
+                    </div>
+            
+            
+                    <script>
+                        /* Индекс слайда по умолчанию */
+                        var slideIndex = 1;
+                        showSlides(slideIndex);
+            
+                        /* Функция увеличивает индекс на 1, показывает следующй слайд*/
+                        function plusSlide() {
+                            showSlides(slideIndex += 1);
+                        }
+            
+                        /* Функция уменьшает индекс на 1, показывает предыдущий слайд*/
+                        function minusSlide() {
+                            showSlides(slideIndex -= 1);
+                        }
+            
+                        /* Устанавливает текущий слайд */
+                        function currentSlide(n) {
+                            showSlides(slideIndex = n);
+                        }
+                        setInterval(plusSlide, 10000); //вызов функции через определённый интервал времени
+            
+                        /* Основная функция слайдера */
+                        function showSlides(n) {
+                            var i;
+                            var slides = document.getElementsByClassName("item");
+                            if (n > slides.length) {
+                                slideIndex = 1
+                            }
+                            if (n < 1) {
+                                slideIndex = slides.length
+                            }
+                            for (i = 0; i < slides.length; i++) {
+                                slides[i].style.display = "none";
+                            }
+            
+                            slides[slideIndex - 1].style.display = "block";
+            
+                        }
+                    </script>
+</body>
+</html>
